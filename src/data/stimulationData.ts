@@ -54,6 +54,7 @@ export type AgeGroupData = {
   daily_checklist: Record<SensoryCategory, ChecklistItem[]>;
   kpsp_milestones: KPSPItem[];
   journal_questions: string[];
+  journal_entries?: Record<string, string>;
 };
 
 const DEFAULT_DATA: Record<AgeGroupKey, AgeGroupData> = {
