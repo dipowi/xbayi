@@ -1,13 +1,36 @@
-// ============================================================
-// DATABASE STIMULASI BAYI 0-24 BULAN
+// Database Stimulasi Bayi 0-24 Bulan
 // Sumber: Panduan Pengasuhan & Stimulasi Anak 0-24 Bulan
 // Disusun oleh: Tsalatsatun A.R. S.Tr.Keb, CPHCT
-// ============================================================
-// Struktur: phases[] → categories[] → activities[]
-// Setiap activity punya: id, title, description, steps[], tips
-// ============================================================
 
-export const STIMULASI_DB = {
+export interface StimActivity {
+  id: string;
+  title: string;
+  description: string;
+  steps: string[];
+  tips: string;
+  frequency?: string;
+}
+
+export interface StimCategory {
+  id: string;
+  label: string;
+  icon: string;
+  activities: StimActivity[];
+}
+
+export interface StimPhase {
+  id: string;
+  label: string;
+  minMonths: number;
+  maxMonths: number;
+  categories: StimCategory[];
+}
+
+export interface StimDB {
+  phases: StimPhase[];
+}
+
+export const STIMULASI_DB: StimDB = {
   phases: [
 
     // ═══════════════════════════════════════════════════════
