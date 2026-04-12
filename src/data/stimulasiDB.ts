@@ -643,7 +643,7 @@ export const STIMULASI_DB: StimDB = {
                 "Berikan juga perintah sederhana: 'Buka mulutmu!', 'Lihat Mama!', 'Dorong dengan kaki!'",
                 "Jelaskan nama objek: 'Ini tanganmu', 'Ini kakimu'."
               ],
-              tips: "Tunggu dengan sabar setelah bertanya — beri bayi waktu untuk "menjawab".",
+              tips: "Tunggu dengan sabar setelah bertanya — beri bayi waktu untuk 'menjawab'.",
               frequency: "Beberapa kali sehari"
             },
             {
