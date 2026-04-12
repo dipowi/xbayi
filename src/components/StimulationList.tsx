@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
-import { Sparkles, BookOpen, Lightbulb, ListChecks } from "lucide-react";
+import { Sparkles, Lightbulb, ListChecks } from "lucide-react";
 
 interface StimulationListProps {
   phase: StimPhase;
