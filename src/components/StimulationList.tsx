@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { type PhaseKey, CLINICAL_DATA } from "@/data/clinicalData";
+import { type StimPhase } from "@/data/stimulasiDB";
 import { getDailyLog, saveDailyLog, createEmptyLog, getToday } from "@/lib/db";
 import {
   Accordion,
@@ -9,20 +9,18 @@ import {
 } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
-import { Sparkles, BookOpen } from "lucide-react";
+import { Sparkles, Lightbulb, ListChecks } from "lucide-react";
 
 interface StimulationListProps {
-  phaseKey: PhaseKey;
+  phase: StimPhase;
 }
 
-const StimulationList = ({ phaseKey }: StimulationListProps) => {
-  const phase = CLINICAL_DATA[phaseKey];
+const StimulationList = ({ phase }: StimulationListProps) => {
   const allActivities = phase.categories.flatMap((c) => c.activities);
   const today = getToday();
 
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
-  // Load today's completion state from IndexedDB
   useEffect(() => {
     (async () => {
       let log = await getDailyLog(today);
@@ -30,25 +28,22 @@ const StimulationList = ({ phaseKey }: StimulationListProps) => {
         log = createEmptyLog(today);
         await saveDailyLog(log);
       }
-      // Read activity-level checks from the log's extras
       const stored: Record<string, boolean> = {};
       for (const act of allActivities) {
         stored[act.id] = (log as any)[act.id] === true;
       }
       setChecked(stored);
     })();
-  }, [today, phaseKey]);
+  }, [today, phase.id]);
 
   const toggle = useCallback(
     async (activityId: string) => {
       const next = { ...checked, [activityId]: !checked[activityId] };
       setChecked(next);
 
-      // Persist: load log, merge activity checks, save
       let log = (await getDailyLog(today)) || createEmptyLog(today);
       (log as any)[activityId] = next[activityId];
 
-      // Recalculate completion based on checked activities
       const doneCount = allActivities.filter((a) => next[a.id]).length;
       log.completion_rate = Math.round((doneCount / allActivities.length) * 100);
       await saveDailyLog(log);
@@ -76,10 +71,10 @@ const StimulationList = ({ phaseKey }: StimulationListProps) => {
 
       {/* Categories */}
       {phase.categories.map((category) => (
-        <div key={category.name} className="space-y-2">
+        <div key={category.id} className="space-y-2">
           <h4 className="font-heading text-base font-semibold text-foreground flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-secondary" />
-            {category.name}
+            <span className="text-lg">{category.icon}</span>
+            {category.label}
           </h4>
 
           <Accordion type="multiple" className="space-y-2">
@@ -113,28 +108,50 @@ const StimulationList = ({ phaseKey }: StimulationListProps) => {
                     </AccordionTrigger>
                     <AccordionContent className="px-4 pb-4 pt-0">
                       <div className="bg-background rounded-xl p-4 space-y-3 border-l-4 border-secondary">
+                        {/* Description */}
+                        <p className="font-body text-sm text-muted-foreground leading-relaxed italic">
+                          {act.description}
+                        </p>
+
+                        {/* Steps */}
                         <div>
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <BookOpen className="w-3.5 h-3.5 text-secondary" />
+                          <div className="flex items-center gap-1.5 mb-1.5">
+                            <ListChecks className="w-3.5 h-3.5 text-secondary" />
                             <span className="font-body text-xs font-semibold text-secondary uppercase tracking-wide">
-                              Cara
+                              Langkah-langkah
                             </span>
                           </div>
-                          <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                            {act.cara}
-                          </p>
+                          <ol className="list-decimal list-inside space-y-1">
+                            {act.steps.map((step, i) => (
+                              <li key={i} className="font-body text-sm text-muted-foreground leading-relaxed">
+                                {step}
+                              </li>
+                            ))}
+                          </ol>
                         </div>
+
+                        {/* Tips */}
                         <div>
                           <div className="flex items-center gap-1.5 mb-1">
-                            <Sparkles className="w-3.5 h-3.5 text-sage" />
+                            <Lightbulb className="w-3.5 h-3.5 text-sage" />
                             <span className="font-body text-xs font-semibold text-sage uppercase tracking-wide">
-                              Manfaat
+                              Tips
                             </span>
                           </div>
                           <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                            {act.manfaat}
+                            {act.tips}
                           </p>
                         </div>
+
+                        {/* Frequency */}
+                        {act.frequency && (
+                          <div className="flex items-center gap-1.5 pt-1">
+                            <Sparkles className="w-3.5 h-3.5 text-secondary/70" />
+                            <span className="font-body text-xs text-secondary/70">
+                              Frekuensi: {act.frequency}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </AccordionContent>
                   </div>
