@@ -59,7 +59,7 @@ export const STIMULASI_DB: StimDB = {
                 "Letakkan senter berjarak 60–100 cm di atas wajah anak.",
                 "Hidupkan senter, perhatikan apakah pupil mengecil dengan segera atau lambat.",
                 "Matikan senter, tunggu 60 detik, kemudian hidupkan kembali.",
-                "Setiap kali menyorotkan cahaya, ucapkan dengan jelas: "Cahaya"."
+                "Setiap kali menyorotkan cahaya, ucapkan dengan jelas: 'Cahaya'."
               ],
               tips: "Jika pupil mengecil cepat → lakukan 1x/bulan. Jika lambat → konsultasikan ke dokter saat kontrol.",
               frequency: "1x/bulan (normal), lebih sering jika lambat"
@@ -84,7 +84,7 @@ export const STIMULASI_DB: StimDB = {
                 "Matikan semua lampu sehingga kamar gelap total.",
                 "Nyalakan senter, sorotkan cahaya ke dinding atau atap.",
                 "Tunggu sampai bayi menemukan cahaya tersebut.",
-                "Jika bayi menengok ke arah cahaya, ucapkan: "Anak pintar, kamu menemukan cahayanya!"",
+                "Jika bayi menengok ke arah cahaya, ucapkan: 'Anak pintar, kamu menemukan cahayanya!'",
                 "Biarkan bayi melihat beberapa detik, lalu matikan senter.",
                 "Tunggu beberapa detik dalam gelap, pindahkan posisi senter, nyalakan kembali."
               ],
@@ -96,9 +96,9 @@ export const STIMULASI_DB: StimDB = {
               title: "Bermain Lampu",
               description: "Menstimulasi pupil bayi agar kemampuan melihat berkembang dengan baik melalui adaptasi gelap-terang.",
               steps: [
-                "Saat malam hari, nyalakan lampu dan katakan: "Lampu menyala".",
+                "Saat malam hari, nyalakan lampu dan katakan: 'Lampu menyala'.",
                 "Biarkan selama 2 menit mata anak beradaptasi.",
-                "Matikan lampu, katakan: "Lampu mati", biarkan 2 menit beradaptasi.",
+                "Matikan lampu, katakan: 'Lampu mati', biarkan 2 menit beradaptasi.",
                 "Ulangi: 2x lampu nyala, 2x lampu mati dalam satu hari."
               ],
               tips: "Lakukan di waktu anak terjaga dan tenang.",
@@ -206,7 +206,7 @@ export const STIMULASI_DB: StimDB = {
               title: "Mengenalkan Nama Suara Lingkungan",
               description: "Setiap kali bayi mendengar suara, beritahukan nama suara tersebut untuk membangun pola bahasa.",
               steps: [
-                "Saat mendengar suara kucing, katakan dengan jelas dan keras: "Itu suara kucing".",
+                "Saat mendengar suara kucing, katakan dengan jelas dan keras: 'Itu suara kucing'.",
                 "Lakukan untuk berbagai suara: hujan, motor, burung, dll.",
                 "Gunakan nada yang jelas dan konsisten."
               ],
@@ -231,7 +231,7 @@ export const STIMULASI_DB: StimDB = {
                 "Gesekkan ibu jari dari tumit sampai jari kaki anak.",
                 "Lakukan 2 kali pada setiap telapak kaki.",
                 "Perhatikan respons kaki bayi.",
-                "Setiap kali menyentuh, ucapkan dengan jelas: "Sentuhan"."
+                "Setiap kali menyentuh, ucapkan dengan jelas: 'Sentuhan'."
               ],
               tips: "Refleks Babinski normal ada dari lahir sampai ±12 bulan (menjelang berjalan).",
               frequency: "1–2x/hari"
@@ -460,7 +460,7 @@ export const STIMULASI_DB: StimDB = {
                 "Letakkan bayi di pangkuan ayah dengan nyaman.",
                 "Matikan semua lampu hingga gelap total.",
                 "Nyalakan senter, sorotkan ke dinding atau atap.",
-                "Tunggu bayi menemukan cahaya, lalu ucapkan: "Anak pintar, kamu menemukan cahayanya!"",
+                "Tunggu bayi menemukan cahaya, lalu ucapkan: 'Anak pintar, kamu menemukan cahayanya!'",
                 "Matikan senter, tunggu beberapa detik, pindahkan posisi, nyalakan kembali.",
                 "Jika sudah konsisten menemukan, keesokan harinya gerakkan senter dan lihat apakah bayi bisa mengikuti."
               ],
@@ -529,7 +529,7 @@ export const STIMULASI_DB: StimDB = {
                 "Bawa bayi ke cermin yang tidak mudah pecah.",
                 "Dekatkan wajah bayi ke cermin.",
                 "Biarkan bayi mengamati bayangan dirinya.",
-                "Tambahkan ekspresi dan kata-kata: "Itu kamu!"."
+                "Tambahkan ekspresi dan kata-kata: 'Itu kamu!'."
               ],
               tips: "Gunakan cermin bayi yang aman dari plastik atau cermin yang ditempel di tempat aman.",
               frequency: "Setiap hari"
@@ -540,7 +540,7 @@ export const STIMULASI_DB: StimDB = {
               description: "Melatih kemampuan visual tracking dan pemahaman object permanence awal.",
               steps: [
                 "Pegang kain/saputangan untuk menutupi wajah Anda dari pandangan bayi.",
-                "Singkirkan penutup dan katakan: "Ciluk ba!" dengan ekspresi gembira.",
+                "Singkirkan penutup dan katakan: 'Ciluk ba!' dengan ekspresi gembira.",
                 "Ulangi beberapa kali.",
                 "Pastikan bayi tidak dapat melihat wajah Anda beberapa saat sebelum muncul kembali."
               ],
@@ -589,7 +589,7 @@ export const STIMULASI_DB: StimDB = {
                 "Letakkan bayi di matras dalam posisi tengkurap.",
                 "Letakkan barang-barang di depan bayi.",
                 "Pukul satu per satu barang menggunakan sendok secara bergantian.",
-                "Sebelum memukul, kenalkan: "Kamu akan mendengar suara piring".",
+                "Sebelum memukul, kenalkan: 'Kamu akan mendengar suara piring'.",
                 "Amati reaksi anak saat mendengar setiap bunyi."
               ],
               tips: "Respons kaget adalah normal dan menjadi target kegiatan ini. Seiring waktu refleks kaget akan terintegrasi.",
@@ -636,12 +636,12 @@ export const STIMULASI_DB: StimDB = {
               title: "Bercakap-Cakap (Tanya-Jawab)",
               description: "Membangun pola percakapan dua arah dengan pertanyaan sederhana.",
               steps: [
-                "Tanyakan: "Apa kabar?" lalu tersenyum dan tunggu.",
+                "Tanyakan: 'Apa kabar?' lalu tersenyum dan tunggu.",
                 "Bayi akan mulai menggerakkan lengan dan mengeluarkan suara.",
                 "Berikan respons positif terhadap suara yang dikeluarkan.",
-                "Variasikan pertanyaan: "Kamu lapar?", "Kamu mengantuk?", "Popokmu basah?"",
-                "Berikan juga perintah sederhana: "Buka mulutmu!", "Lihat Mama!", "Dorong dengan kaki!"",
-                "Jelaskan nama objek: "Ini tanganmu", "Ini kakimu"."
+                "Variasikan pertanyaan: 'Kamu lapar?', 'Kamu mengantuk?', 'Popokmu basah?'",
+                "Berikan juga perintah sederhana: 'Buka mulutmu!', 'Lihat Mama!', 'Dorong dengan kaki!'",
+                "Jelaskan nama objek: 'Ini tanganmu', 'Ini kakimu'."
               ],
               tips: "Tunggu dengan sabar setelah bertanya — beri bayi waktu untuk "menjawab".",
               frequency: "Beberapa kali sehari"
@@ -665,7 +665,7 @@ export const STIMULASI_DB: StimDB = {
               description: "Bermain cilukba dengan ekspresi penuh semangat untuk merangsang tawa dan respons emosi.",
               steps: [
                 "Sembunyikan wajah di balik tangan atau kain.",
-                "Muncul kembali dengan ekspresi gembira dan katakan: "Ciluk ba!"",
+                "Muncul kembali dengan ekspresi gembira dan katakan: 'Ciluk ba!'",
                 "Target: bayi tertawa atau menjerit karena gembira."
               ],
               tips: "Ekspresi yang berlebihan (gembira, kaget, heran) sangat menarik bagi bayi.",
@@ -687,7 +687,7 @@ export const STIMULASI_DB: StimDB = {
                 "Letakkan bayi di matras.",
                 "Gesekkan ibu jari dari tumit sampai jari kaki.",
                 "Lakukan 2 kali pada setiap telapak kaki.",
-                "Ucapkan "Sentuhan" setiap kali menyentuh."
+                "Ucapkan 'Sentuhan' setiap kali menyentuh."
               ],
               tips: "Konsisten setiap hari agar refleks berkembang dengan baik.",
               frequency: "1–2x/hari"
@@ -698,8 +698,8 @@ export const STIMULASI_DB: StimDB = {
               description: "Mengenalkan sensasi dingin dan hangat pada bayi.",
               steps: [
                 "Siapkan mangkok berisi es batu + air (dingin) dan mangkok berisi air hangat.",
-                "Celupkan tangan ibu ke air dingin, sentuhkan ke bagian tubuh anak, ucapkan: "Dingin".",
-                "Ganti dengan air hangat, ucapkan: "Hangat".",
+                "Celupkan tangan ibu ke air dingin, sentuhkan ke bagian tubuh anak, ucapkan: 'Dingin'.",
+                "Ganti dengan air hangat, ucapkan: 'Hangat'.",
                 "Lakukan bergantian pada bagian tubuh yang berbeda.",
                 "Jika anak belum nyaman, lakukan pelan-pelan dan tidak perlu lama."
               ],
@@ -712,8 +712,8 @@ export const STIMULASI_DB: StimDB = {
               description: "Mengenalkan perbedaan tekstur kasar dan halus pada telapak tangan, kaki, dan tubuh.",
               steps: [
                 "Siapkan spons cuci piring yang sudah dicuci bersih dan dikeringkan.",
-                "Gesekkan sisi kasar spons perlahan ke telapak kaki dan tangan, ucapkan: "Bagian kasar".",
-                "Lakukan hal yang sama dengan sisi halus, ucapkan: "Bagian halus".",
+                "Gesekkan sisi kasar spons perlahan ke telapak kaki dan tangan, ucapkan: 'Bagian kasar'.",
+                "Lakukan hal yang sama dengan sisi halus, ucapkan: 'Bagian halus'.",
                 "Hari berikutnya, lakukan pada seluruh tubuh.",
                 "Jika belum nyaman, kenalkan terus selama seminggu tanpa memaksakan."
               ],
@@ -726,9 +726,9 @@ export const STIMULASI_DB: StimDB = {
               description: "Mengenalkan sensasi tekanan pada berbagai bagian tubuh bayi.",
               steps: [
                 "Posisikan anak dalam keadaan nyaman.",
-                "Tekan tangan anak dengan jari telunjuk, ucapkan: "Tekan tangan".",
-                "Pindah ke kaki, ucapkan: "Tekan kaki".",
-                "Pindah ke pipi, ucapkan: "Tekan pipi"."
+                "Tekan tangan anak dengan jari telunjuk, ucapkan: 'Tekan tangan'.",
+                "Pindah ke kaki, ucapkan: 'Tekan kaki'.",
+                "Pindah ke pipi, ucapkan: 'Tekan pipi'."
               ],
               tips: "Tekanan dilakukan lembut. Verbalkan setiap tindakan untuk membangun pola bahasa.",
               frequency: "1x/hari"
@@ -979,7 +979,7 @@ export const STIMULASI_DB: StimDB = {
               description: "Melanjutkan permainan ciluk-ba untuk stimulasi visual dan emosi.",
               steps: [
                 "Tutup wajah dengan kain/saputangan.",
-                "Singkirkan dan ucapkan "Ciluk ba!" dengan ekspresi gembira.",
+                "Singkirkan dan ucapkan 'Ciluk ba!' dengan ekspresi gembira.",
                 "Ulangi beberapa kali."
               ],
               tips: "Di usia ini bayi sudah mulai paham object permanence — ini sangat menarik baginya.",
@@ -1012,7 +1012,7 @@ export const STIMULASI_DB: StimDB = {
               steps: [
                 "Nyanyikan lagu anak-anak bersama bayi.",
                 "Setelah beberapa hari, coba berhenti di akhir bait.",
-                "Contoh: "Cicak, cicak di din…" (berhenti, tunggu bayi melanjutkan).",
+                "Contoh: 'Cicak, cicak di din…' (berhenti, tunggu bayi melanjutkan).",
                 "Berikan respons positif jika bayi bersuara mengisi."
               ],
               tips: "Variasikan lagu dan irama untuk kekayaan stimulasi auditori.",
@@ -1047,7 +1047,7 @@ export const STIMULASI_DB: StimDB = {
               title: "Bunyi-Bunyi Lingkungan Rumah",
               description: "Mengenalkan bunyi-bunyi alami rumah tangga dan menyebutkan nama bendanya.",
               steps: [
-                "Saat membuka kran: "Itu bunyi air".",
+                "Saat membuka kran: 'Itu bunyi air'.",
                 "Kenalkan suara penghisap debu, blender yang digunakan.",
                 "Perkenalkan semua bunyi alami rumah tangga dan sebutkan nama bendanya."
               ],
@@ -1060,7 +1060,7 @@ export const STIMULASI_DB: StimDB = {
               description: "Mengajarkan bayi melambaikan tangan sebagai interaksi sosial.",
               steps: [
                 "Ajak bayi bermain dengan orang lain.",
-                "Ketika ayah pergi, lambaikan tangan ke bayi sambil berkata: "Da… daah".",
+                "Ketika ayah pergi, lambaikan tangan ke bayi sambil berkata: 'Da… daah'.",
                 "Bantu bayi membalas dengan melambaikan tangannya.",
                 "Setelah mengerti, coba biarkan bayi menggerakkan tangannya sendiri."
               ],
@@ -1085,7 +1085,7 @@ export const STIMULASI_DB: StimDB = {
                 "Kali berikutnya: gosok lembut dengan telapak tangan rata.",
                 "Kali berikutnya lagi: pijatan lembut seluruh tubuh.",
                 "Jangan lupa gosok dan pijat punggung hingga pinggul (integrasi Spinal Galant Reflex).",
-                "Saat melakukan, sebutkan nama bagian tubuh: "Sekarang ibu menggelitik kakimu"."
+                "Saat melakukan, sebutkan nama bagian tubuh: 'Sekarang ibu menggelitik kakimu'."
               ],
               tips: "Spinal Galant Reflex yang terintegrasi baik = anak tidak mudah mengompol di malam hari.",
               frequency: "Setiap setelah mandi"
@@ -1097,8 +1097,8 @@ export const STIMULASI_DB: StimDB = {
               steps: [
                 "Siapkan pasangan benda kontras: handuk kasar & halus, sisir kasar & halus, kain goni & satin, spons hijau kasar & kuning halus.",
                 "Sentuhkan lembut ke seluruh tubuh bayi bergantian.",
-                "Saat menyentuh sisir kasar: "Ini sisir kasar".",
-                "Saat menyentuh sisir halus: "Ini sisir halus"."
+                "Saat menyentuh sisir kasar: 'Ini sisir kasar'.",
+                "Saat menyentuh sisir halus: 'Ini sisir halus'."
               ],
               tips: "Verbalkan setiap tekstur untuk membangun kosakata sensorik anak.",
               frequency: "2–3x/minggu"
@@ -1458,7 +1458,7 @@ export const STIMULASI_DB: StimDB = {
               description: "Mengenalkan nama semua benda di rumah sambil berkeliling.",
               steps: [
                 "Ajak bayi berkeliling rumah.",
-                "Tunjukkan dan sebutkan nama benda: "dinding", "lampu", "kulkas", "kursi".",
+                "Tunjukkan dan sebutkan nama benda: 'dinding', 'lampu', 'kulkas', 'kursi'.",
                 "Jika bayi menunjuk benda berulang, sebutkan terus nama benda itu.",
                 "Lakukan juga di luar rumah."
               ],
@@ -1524,7 +1524,7 @@ export const STIMULASI_DB: StimDB = {
               steps: [
                 "Setelah mandi, gelitik, gosok, atau pijat seluruh tubuh selama 1 menit.",
                 "Gosok dan pijat punggung hingga pinggul (integrasi Spinal Galant).",
-                "Sambil lakukan, kenalkan nama kanan-kiri: "Ini tangan kananmu", "Ini kaki kirimu".",
+                "Sambil lakukan, kenalkan nama kanan-kiri: 'Ini tangan kananmu', 'Ini kaki kirimu'.",
                 "Sering memeluk dan mengelus punggung atas hingga bawah."
               ],
               tips: "Semakin sering diulang, semakin terintegrasi refleks dan semakin kuat kesadaran tubuh bayi.",
@@ -1912,7 +1912,7 @@ export const STIMULASI_DB: StimDB = {
               title: "Merangkai Dua Kata",
               description: "Mendorong anak dari satu kata ke dua kata dalam permintaan.",
               steps: [
-                "Jika anak minta sesuatu dengan satu kata ("susu"), ajari mengatakan dua kata ("minta susu").",
+                "Jika anak minta sesuatu dengan satu kata ('susu'), ajari mengatakan dua kata ('minta susu').",
                 "Puji anak bila mau menirukan rangkaian kata.",
                 "Jadikan konsisten dalam setiap percakapan."
               ],
@@ -2215,7 +2215,7 @@ export const STIMULASI_DB: StimDB = {
               steps: [
                 "Buka buku atau majalah bergambar bersama anak.",
                 "Tunjuk gambar dan minta anak bercerita.",
-                "Jika anak belum bisa, berikan model: "Ini kelinci, dia lagi lompat-lompat"."
+                "Jika anak belum bisa, berikan model: 'Ini kelinci, dia lagi lompat-lompat'."
               ],
               tips: "Setiap upaya bercerita anak harus diapresiasi tanpa dikoreksi.",
               frequency: "Setiap hari"
@@ -2226,7 +2226,7 @@ export const STIMULASI_DB: StimDB = {
               description: "Melatih percakapan melalui permainan peran telepon.",
               steps: [
                 "Buat 'telepon' dari gulungan kertas atau kardus.",
-                "Buat permainan: "Menilpun nenek", "Menilpun ayah di kantor".",
+                "Buat permainan: 'Menilpun nenek', 'Menilpun ayah di kantor'.",
                 "Dorong anak mengucapkan kata-kata dalam percakapan."
               ],
               tips: "Bermain peran mendorong penggunaan bahasa dalam konteks yang bermakna.",
@@ -2381,7 +2381,7 @@ export const STIMULASI_DB: StimDB = {
               steps: [
                 "Siapkan dua mangkok: satu berisi es batu + air (dingin), satu air hangat.",
                 "Isi masing-masing mangkok dengan mainan kecil.",
-                "Ajak anak mengambil mainan dari air dingin sambil sebutkan "dingin".",
+                "Ajak anak mengambil mainan dari air dingin sambil sebutkan 'dingin'.",
                 "Ganti ke air hangat, biarkan anak mengeksplorasi.",
                 "Bergantian antara dingin dan hangat."
               ],
@@ -2554,7 +2554,7 @@ export const STIMULASI_DB: StimDB = {
                 "Tunjukkan ke anak satu per satu.",
                 "Sebutkan nama buah, minta anak mencoba menyebutkan.",
                 "Berikan buah untuk diraba dan dirasakan bentuknya.",
-                "Saat meraba, sebutkan: "Ini bentuk pisang".",
+                "Saat meraba, sebutkan: 'Ini bentuk pisang'.",
                 "Jika sudah bisa makan, berikan buah dan sebutkan rasanya.",
                 "Lanjutkan dengan benda lain: piring, sendok, gelas."
               ],
@@ -2579,7 +2579,7 @@ export const STIMULASI_DB: StimDB = {
               title: "Belajar Menunjuk Anggota Badan",
               description: "Melatih pemahaman nama anggota tubuh melalui pertanyaan.",
               steps: [
-                "Tanyakan: "Hidungnya [nama anak] mana?", "Kakinya mana?"",
+                "Tanyakan: 'Hidungnya [nama anak] mana?', 'Kakinya mana?'",
                 "Tunggu anak menunjuk bagian yang diminta.",
                 "Berikan pujian jika benar, tunjukkan yang benar jika salah."
               ],
