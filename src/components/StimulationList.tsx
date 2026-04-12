@@ -96,10 +96,7 @@ const StimulationList = ({ phaseKey }: StimulationListProps) => {
                       <div className="flex items-center gap-3 flex-1 text-left">
                         <Checkbox
                           checked={isChecked}
-                          onCheckedChange={(e) => {
-                            e; // prevent accordion toggle
-                            toggle(act.id);
-                          }}
+                          onCheckedChange={() => toggle(act.id)}
                           onClick={(e) => e.stopPropagation()}
                           className="h-5 w-5 rounded border-2 border-sage/40 data-[state=checked]:bg-sage data-[state=checked]:border-sage shrink-0"
                         />

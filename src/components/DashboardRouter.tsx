@@ -1,5 +1,5 @@
 import { type BabyProfile, formatDateID, getToday } from "@/lib/db";
-import { calculateAgeContext } from "@/data/clinicalData";
+import { calculateAgeContext, CLINICAL_DATA } from "@/data/clinicalData";
 import StimulationList from "./StimulationList";
 import ProgressRing from "./ProgressRing";
 import { useState, useEffect } from "react";
@@ -17,7 +17,6 @@ const DashboardRouter = ({ profile }: DashboardRouterProps) => {
 
   // Count total activities for this phase
   useEffect(() => {
-    const { CLINICAL_DATA } = require("@/data/clinicalData");
     const phase = CLINICAL_DATA[ageCtx.phaseKey];
     const allActs = phase.categories.flatMap((c: any) => c.activities);
     setTotal(allActs.length);

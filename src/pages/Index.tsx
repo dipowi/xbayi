@@ -22,8 +22,8 @@ const Index = () => {
   };
 
   const handleReset = useCallback(async () => {
-    const { deleteDatabase } = await import("idb");
-    await deleteDatabase("jurnal-stimulasi");
+    const idb = await import("idb");
+    await idb.deleteDB("jurnal-stimulasi");
     setProfile(null);
     setTab("today");
   }, []);
