@@ -1,5 +1,5 @@
 import { type BabyProfile, formatDateID, getToday } from "@/lib/db";
-import { calculateAgeContext, CLINICAL_DATA } from "@/data/clinicalData";
+import { calculateAgeContext } from "@/data/clinicalData";
 import StimulationList from "./StimulationList";
 import ProgressRing from "./ProgressRing";
 import { useState, useEffect } from "react";
@@ -15,26 +15,23 @@ const DashboardRouter = ({ profile }: DashboardRouterProps) => {
   const [completed, setCompleted] = useState(0);
   const [total, setTotal] = useState(0);
 
-  // Count total activities for this phase
   useEffect(() => {
-    const phase = CLINICAL_DATA[ageCtx.phaseKey];
-    const allActs = phase.categories.flatMap((c: any) => c.activities);
+    const allActs = ageCtx.phase.categories.flatMap((c) => c.activities);
     setTotal(allActs.length);
 
-    // Poll completion from DB
     const check = async () => {
       let log = await getDailyLog(today);
       if (!log) {
         log = createEmptyLog(today);
         await saveDailyLog(log);
       }
-      const done = allActs.filter((a: any) => (log as any)[a.id] === true).length;
+      const done = allActs.filter((a) => (log as any)[a.id] === true).length;
       setCompleted(done);
     };
     check();
     const interval = setInterval(check, 1000);
     return () => clearInterval(interval);
-  }, [ageCtx.phaseKey, today]);
+  }, [ageCtx.phase.id, today]);
 
   return (
     <div className="px-4 pb-8 space-y-6 max-w-lg mx-auto">
@@ -62,7 +59,7 @@ const DashboardRouter = ({ profile }: DashboardRouterProps) => {
       </div>
 
       {/* Stimulation Activities */}
-      <StimulationList phaseKey={ageCtx.phaseKey} />
+      <StimulationList phase={ageCtx.phase} />
     </div>
   );
 };
