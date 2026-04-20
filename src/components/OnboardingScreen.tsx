@@ -187,9 +187,10 @@ const OnboardingScreen = ({ onComplete }: OnboardingScreenProps) => {
                 </div>
 
                 <div className="space-y-4">
-                  {/* Native-first date wrapper */}
-                  <div className="relative h-14 w-full rounded-2xl border border-sage/20 bg-card hover:border-sage/40 transition-colors">
-                    <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+                  {/* Ghost Input Overlay — Bulletproof Native Date Picker */}
+                  <div className="relative h-16 w-full">
+                    {/* Visual Layer (bottom) */}
+                    <div className="absolute inset-0 rounded-2xl border border-sage/30 bg-white flex items-center justify-between px-4 transition-colors">
                       <div className="flex items-center gap-3 min-w-0">
                         <CalendarIcon className="w-5 h-5 text-sage shrink-0" />
                         <span
@@ -205,6 +206,7 @@ const OnboardingScreen = ({ onComplete }: OnboardingScreenProps) => {
                       </div>
                       <ChevronDown className="w-4 h-4 text-text-muted-custom shrink-0" />
                     </div>
+                    {/* Interaction Layer (top) — captures every tap */}
                     <input
                       type="date"
                       aria-label="Tanggal lahir"
@@ -215,9 +217,20 @@ const OnboardingScreen = ({ onComplete }: OnboardingScreenProps) => {
                       }}
                       max={new Date().toISOString().slice(0, 10)}
                       min="2020-01-01"
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer appearance-none bg-transparent border-0 [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-inner-spin-button]:appearance-none"
+                      className="absolute inset-0 z-10 w-full h-full opacity-0 cursor-pointer appearance-none bg-transparent border-0 m-0 p-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-date-and-time-value]:text-left"
                     />
                   </div>
+
+                  {/* "Mulai Lagi" reset action */}
+                  {date && (
+                    <button
+                      type="button"
+                      onClick={() => setDate(undefined)}
+                      className="block mx-auto text-xs font-body text-text-muted-custom hover:text-sage transition-colors underline-offset-4 hover:underline"
+                    >
+                      Mulai Lagi
+                    </button>
+                  )}
 
                   <AnimatePresence>
                     {ageInfo && (
