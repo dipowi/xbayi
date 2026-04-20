@@ -4,7 +4,7 @@ import OnboardingScreen from "@/components/OnboardingScreen";
 import DashboardRouter from "@/components/DashboardRouter";
 import WeeklyRetrospective from "@/components/WeeklyRetrospective";
 import DangerZone from "@/components/DangerZone";
-import { CalendarCheck, History, Settings, Baby } from "lucide-react";
+import { CalendarCheck, History, Settings, Baby, User } from "lucide-react";
 
 type Tab = "today" | "history" | "settings";
 
@@ -42,6 +42,25 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      {/* Sticky top navbar */}
+      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-divider/60">
+        <div className="max-w-lg mx-auto flex items-center justify-between px-5 h-14">
+          <button
+            onClick={() => setTab("today")}
+            className="font-heading text-xl font-semibold tracking-tight text-text-heading"
+          >
+            Ruang Tumbuh
+          </button>
+          <button
+            onClick={() => setTab("settings")}
+            aria-label="Pengaturan"
+            className="w-9 h-9 rounded-full bg-sage-pale flex items-center justify-center text-sage hover:bg-sage/20 transition-colors"
+          >
+            <User className="w-4 h-4" />
+          </button>
+        </div>
+      </header>
+
       {tab === "today" && <DashboardRouter profile={profile} />}
       {tab === "history" && <WeeklyRetrospective />}
       {tab === "settings" && <DangerZone onReset={handleReset} />}

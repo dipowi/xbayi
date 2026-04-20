@@ -19,13 +19,14 @@ const CoverSection = ({ onEnter }: CoverSectionProps) => {
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-sage/10 mb-4">
             <Baby className="w-10 h-10 text-sage" />
           </div>
-          <h1 className="font-heading text-3xl md:text-4xl font-bold tracking-tight text-text-heading leading-tight">
-            Jurnal Stimulasi Bayi
-            <br />
-            <span className="text-sage">0 – 24 Bulan</span>
+          <h1 className="font-heading text-4xl md:text-5xl font-semibold tracking-tight text-text-heading leading-tight">
+            Ruang Tumbuh
           </h1>
-          <p className="text-text-body text-sm mt-3 leading-relaxed">
-            Panduan stimulasi sensorik harian, tracking milestone KPSP, dan jurnal refleksi mingguan untuk tumbuh kembang optimal si kecil.
+          <p className="font-body text-text-body text-sm mt-2 leading-relaxed">
+            Pantau tiap langkah kecilnya, setiap hari.
+          </p>
+          <p className="font-body text-text-muted-custom text-xs mt-3 uppercase tracking-[0.2em]">
+            Stimulasi 0 – 24 Bulan
           </p>
         </div>
 
