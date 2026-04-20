@@ -10,11 +10,10 @@ import {
   ArrowLeft,
   GraduationCap,
   Heart,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { calculateAgeContext } from "@/data/clinicalData";
 
