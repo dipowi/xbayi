@@ -4,6 +4,7 @@ import StimulationList from "./StimulationList";
 import ProgressRing from "./ProgressRing";
 import { useState, useEffect } from "react";
 import { getDailyLog, createEmptyLog, saveDailyLog } from "@/lib/db";
+import { filterDueActivities } from "@/lib/scheduler";
 
 interface DashboardRouterProps {
   profile: BabyProfile;
@@ -17,7 +18,8 @@ const DashboardRouter = ({ profile }: DashboardRouterProps) => {
 
   useEffect(() => {
     const allActs = ageCtx.phase.categories.flatMap((c) => c.activities);
-    setTotal(allActs.length);
+    const dueActs = filterDueActivities(allActs, today);
+    setTotal(dueActs.length);
 
     const check = async () => {
       let log = await getDailyLog(today);
@@ -25,7 +27,7 @@ const DashboardRouter = ({ profile }: DashboardRouterProps) => {
         log = createEmptyLog(today);
         await saveDailyLog(log);
       }
-      const done = allActs.filter((a) => (log as any)[a.id] === true).length;
+      const done = dueActs.filter((a) => (log as any)[a.id] === true).length;
       setCompleted(done);
     };
     check();
@@ -59,7 +61,7 @@ const DashboardRouter = ({ profile }: DashboardRouterProps) => {
       </div>
 
       {/* Stimulation Activities */}
-      <StimulationList phase={ageCtx.phase} />
+      <StimulationList phase={ageCtx.phase} dateStr={today} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { type StimPhase } from "@/data/stimulasiDB";
 import { getDailyLog, saveDailyLog, createEmptyLog, getToday } from "@/lib/db";
+import { filterDueActivities } from "@/lib/scheduler";
 import {
   Accordion,
   AccordionContent,
@@ -13,11 +14,16 @@ import { Sparkles, Lightbulb, ListChecks } from "lucide-react";
 
 interface StimulationListProps {
   phase: StimPhase;
+  dateStr?: string;
 }
 
-const StimulationList = ({ phase }: StimulationListProps) => {
-  const allActivities = phase.categories.flatMap((c) => c.activities);
-  const today = getToday();
+const StimulationList = ({ phase, dateStr }: StimulationListProps) => {
+  const today = dateStr || getToday();
+  const dueIds = useMemo(() => {
+    const all = phase.categories.flatMap((c) => c.activities);
+    return new Set(filterDueActivities(all, today).map((a) => a.id));
+  }, [phase.id, today]);
+  const allActivities = phase.categories.flatMap((c) => c.activities).filter((a) => dueIds.has(a.id));
 
   const [checked, setChecked] = useState<Record<string, boolean>>({});
 
@@ -70,7 +76,10 @@ const StimulationList = ({ phase }: StimulationListProps) => {
       </div>
 
       {/* Categories */}
-      {phase.categories.map((category) => (
+      {phase.categories.map((category) => {
+        const dueCatActs = category.activities.filter((a) => dueIds.has(a.id));
+        if (dueCatActs.length === 0) return null;
+        return (
         <div key={category.id} className="space-y-2">
           <h4 className="font-heading text-base font-semibold text-foreground flex items-center gap-2">
             <span className="text-lg">{category.icon}</span>
@@ -78,7 +87,7 @@ const StimulationList = ({ phase }: StimulationListProps) => {
           </h4>
 
           <Accordion type="multiple" className="space-y-2">
-            {category.activities.map((act) => {
+            {dueCatActs.map((act) => {
               const isChecked = !!checked[act.id];
               return (
                 <AccordionItem
@@ -160,7 +169,8 @@ const StimulationList = ({ phase }: StimulationListProps) => {
             })}
           </Accordion>
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
