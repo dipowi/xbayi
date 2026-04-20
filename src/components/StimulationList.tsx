@@ -169,7 +169,8 @@ const StimulationList = ({ phase, dateStr }: StimulationListProps) => {
             })}
           </Accordion>
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
