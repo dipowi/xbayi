@@ -187,33 +187,37 @@ const OnboardingScreen = ({ onComplete }: OnboardingScreenProps) => {
                 </div>
 
                 <div className="space-y-4">
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className={cn(
-                          "w-full justify-start text-left font-body h-14 rounded-2xl bg-card border-divider text-base",
-                          !date && "text-text-muted-custom"
-                        )}
-                      >
-                        <CalendarIcon className="mr-3 h-5 w-5 text-sage" />
-                        {date
-                          ? format(date, "dd MMMM yyyy", { locale: idLocale })
-                          : "Pilih tanggal lahir"}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="center">
-                      <Calendar
-                        mode="single"
-                        selected={date}
-                        onSelect={setDate}
-                        disabled={(d) => d > new Date() || d < new Date("2020-01-01")}
-                        initialFocus
-                        defaultMonth={date}
-                        className="p-3 pointer-events-auto"
-                      />
-                    </PopoverContent>
-                  </Popover>
+                  {/* Native-first date wrapper */}
+                  <div className="relative h-14 w-full rounded-2xl border border-sage/20 bg-card hover:border-sage/40 transition-colors">
+                    <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <CalendarIcon className="w-5 h-5 text-sage shrink-0" />
+                        <span
+                          className={cn(
+                            "font-body text-base truncate",
+                            date ? "text-text-heading font-medium" : "text-text-muted-custom"
+                          )}
+                        >
+                          {date
+                            ? format(date, "d MMMM yyyy", { locale: idLocale })
+                            : "Pilih Tanggal Lahir"}
+                        </span>
+                      </div>
+                      <ChevronDown className="w-4 h-4 text-text-muted-custom shrink-0" />
+                    </div>
+                    <input
+                      type="date"
+                      aria-label="Tanggal lahir"
+                      value={date ? date.toISOString().slice(0, 10) : ""}
+                      onChange={(e) => {
+                        const v = e.target.value;
+                        setDate(v ? new Date(v + "T00:00:00") : undefined);
+                      }}
+                      max={new Date().toISOString().slice(0, 10)}
+                      min="2020-01-01"
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer appearance-none bg-transparent border-0 [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-inner-spin-button]:appearance-none"
+                    />
+                  </div>
 
                   <AnimatePresence>
                     {ageInfo && (
