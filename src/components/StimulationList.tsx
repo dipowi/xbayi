@@ -76,7 +76,10 @@ const StimulationList = ({ phase, dateStr }: StimulationListProps) => {
       </div>
 
       {/* Categories */}
-      {phase.categories.map((category) => (
+      {phase.categories.map((category) => {
+        const dueCatActs = category.activities.filter((a) => dueIds.has(a.id));
+        if (dueCatActs.length === 0) return null;
+        return (
         <div key={category.id} className="space-y-2">
           <h4 className="font-heading text-base font-semibold text-foreground flex items-center gap-2">
             <span className="text-lg">{category.icon}</span>
@@ -84,7 +87,7 @@ const StimulationList = ({ phase, dateStr }: StimulationListProps) => {
           </h4>
 
           <Accordion type="multiple" className="space-y-2">
-            {category.activities.map((act) => {
+            {dueCatActs.map((act) => {
               const isChecked = !!checked[act.id];
               return (
                 <AccordionItem
