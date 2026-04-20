@@ -97,15 +97,15 @@ const OnboardingScreen = ({ onComplete }: OnboardingScreenProps) => {
                     <Baby className="w-14 h-14 text-sage" strokeWidth={1.5} />
                   </div>
                 </div>
-                <div className="space-y-3">
-                  <h1 className="font-heading text-3xl md:text-4xl font-bold text-text-heading leading-tight">
+                <div className="space-y-2">
+                  <p className="font-body text-xs uppercase tracking-[0.25em] text-text-muted-custom">
                     Selamat Datang di
-                    <br />
-                    Jurnal Bidan Amanah
+                  </p>
+                  <h1 className="font-heading text-4xl md:text-5xl font-semibold text-text-heading leading-tight tracking-tight">
+                    Ruang Tumbuh
                   </h1>
-                  <p className="font-body text-base text-text-body leading-relaxed max-w-sm mx-auto">
-                    Pendamping stimulasi tumbuh kembang si kecil di Masa Emas{" "}
-                    <span className="text-sage font-medium">0–24 bulan</span>.
+                  <p className="font-body text-base text-text-body leading-relaxed max-w-sm mx-auto pt-1">
+                    Pantau tiap langkah kecilnya, setiap hari.
                   </p>
                 </div>
                 <Button
@@ -290,7 +290,7 @@ const OnboardingScreen = ({ onComplete }: OnboardingScreenProps) => {
                   </p>
                   <div className="bg-card border border-divider rounded-2xl p-5 text-left">
                     <p className="font-body text-sm text-text-body leading-relaxed">
-                      Jurnal Bidan Amanah dirancang khusus untuk memantau stimulasi intensif
+                      Ruang Tumbuh dirancang khusus untuk memantau stimulasi intensif
                       dari usia <span className="font-medium text-text-heading">0 hingga 24 bulan</span>.
                       Karena {name || "buah hati Anda"} sudah melewati fase ini, Anda dapat
                       tetap melihat panduan umum, namun{" "}
